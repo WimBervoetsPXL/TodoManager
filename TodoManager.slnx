@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TodoManager.Application/TodoManager.Application.csproj" />
+  <Project Path="TodoManager.Domain/TodoManager.Domain.csproj" />
+  <Project Path="TodoManager.Infrastructure/TodoManager.Infrastructure.csproj" />
+  <Project Path="TodoManager.WPF/TodoManager.WPF.csproj" />
+</Solution>
