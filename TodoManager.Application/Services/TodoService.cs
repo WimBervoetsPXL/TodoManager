@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using TodoManager.Domain.Models;
+using TodoManager.Infrastructure;
 using TodoManager.Infrastructure.Repositories;
 
 namespace TodoManager.Application.Services
 {
     public class TodoService
     {
-        private readonly TodoRepository _repository;
+        private readonly TodoJsonRepository _repository;
 
         public TodoService()
         {
             // TODO: maak de repository aan
-            _repository = new TodoRepository();
+            _repository = new TodoJsonRepository();
         }
 
         public List<TodoItem> GetTodos()

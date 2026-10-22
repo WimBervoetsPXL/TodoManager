@@ -105,5 +105,20 @@ namespace TodoManager.WPF
                 MessageBox.Show(ex.Message, "Onverwachte fout");
             }
         }
+
+        private void CompleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

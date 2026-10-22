@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace TodoManager.Domain.Models
 {
@@ -27,6 +28,24 @@ namespace TodoManager.Domain.Models
             CompletedAt = null;
         }
 
+        [JsonConstructor]
+        public TodoItem(int id, string title, string? description, DateTime dueDate, bool isCompleted, DateTime? completedAt)
+        {
+            Id = id;
+            Title = title;
+            Description = description;
+            DueDate = dueDate;
+            IsCompleted = isCompleted;
+            CompletedAt = completedAt;
+        }
+
+        public TodoItem(TodoItem item)
+        {
+            this.Id = item.Id;
+            this.Title = item.Title;
+            //...
+        }
+
         public void MarkAsCompleted()
         {
             if (IsCompleted)
@@ -44,5 +63,10 @@ namespace TodoManager.Domain.Models
             string status = IsCompleted ? "[Done]" : "[Open]";
             return $"{status} {Title} (due {DueDate:dd/MM/yyyy})";
         }
+
+        //public override bool Equals(object? obj)
+        //{
+        //    return this.Id == ((TodoItem)obj).Id;
+        //}
     }
 }
